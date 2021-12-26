@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng Lớp Mô Hình Chữ Nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1200" height="500"></canvas>
+<script>
+    class Rectangle{
+        _long;
+        _wide;
+
+        constructor(dai,wide) {
+
+            this._wide=wide;
+
+            this._long=dai;
+
+        }
+
+        get _long() {
+            return this._long;
+        }
+
+        set _long(dai) {
+            this._long = dai;
+        }
+
+        get _wide() {
+            return this._wide;
+        }
+
+        set _wide(wide) {
+            this._wide = wide;
+        }
+
+        getAcreage() {
+           let c = document.getElementById("myCanvas");
+           let ctx = c.getContext("2d");
+           ctx.font= "20px Georgia";
+           ctx.fillText("diện tích hình chữ nhật là :"+(this._wide * this._long),200,25);
+           ctx.font ="30px Verdana";
+           ctx.stroke();
+        }
+
+
+        getPerimeter() {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.font= "20px Georgia";
+            ctx.fillText("chu vi hình chữ nhật là :"+((this._wide + this._long)*2),200,65);
+            ctx.font ="30px Verdana";
+            ctx.stroke();
+        }
+        getDrawAzo(){
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.rect(20,20,150,100);
+            ctx.stroke();
+        }
+
+
+    }
+    let azo = new Rectangle(10,5);
+    azo.getDrawAzo()
+    Rectangle.getPerimeter;
+    Rectangle.getAcreage;
+    console.log(azo._long);
+    console.log(azo._wide);
+    azo.getPerimeter();
+
+    azo.getAcreage();
+
+
+</script>
+
+</body>
+</html>
